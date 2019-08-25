@@ -9,11 +9,9 @@ import java.util.Date
 import kotlin.system.measureTimeMillis
 
 fun main(args: Array<String>) {
-    //an example connection to H2 DB
     Database.connect("jdbc:postgresql://localhost:5432/postgres", driver = "org.postgresql.Driver", user = "postgres")
 
     transaction {
-        // print sql to std-out
         addLogger(StdOutSqlLogger)
 
 //        SchemaUtils.create(ParagraphRevTable)
